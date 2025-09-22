@@ -6,6 +6,22 @@
   <title>Mon Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <button id="theme-toggle">🌙 Mode sombre</button>
+  <script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+
+    // Changer le texte du bouton
+    if (body.classList.contains('dark')) {
+      toggleBtn.textContent = '☀️ Mode clair';
+    } else {
+      toggleBtn.textContent = '🌙 Mode sombre';
+    }
+  });
+</script>
 <body>
   <nav>
   <ul>
