@@ -73,3 +73,47 @@ html {
   border: 3px solid white;
   margin-top: 20px;
 }
+/* Bouton de thème */
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+/* Thème sombre */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f2f2f2;
+}
+
+body.dark header,
+body.dark footer {
+  background-color: #111;
+  color: white;
+}
+
+body.dark .project {
+  background-color: #2c2c2c;
+  border-left-color: #00BCD4;
+}
+
+body.dark nav {
+  background-color: #222;
+}
+
+body.dark nav ul li a {
+  color: #f2f2f2;
+}
+
+body.dark nav ul li a:hover {
+  color: #00BCD4;
+}
