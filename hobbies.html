@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Portfolio Thomas Mansart Pauvif</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="loader-logo">
+            <defs>
+                <linearGradient id="techBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0A192F"/>
+                    <stop offset="50%" stop-color="#0056D2"/>
+                    <stop offset="100%" stop-color="#00B4D8"/>
+                </linearGradient>
+            </defs>
+            <rect class="t-part t-horiz" x="126" y="140" width="260" height="64" rx="20" fill="url(#techBlue)"/>
+            <rect class="t-part t-vert" x="224" y="180" width="64" height="160" rx="20" fill="url(#techBlue)"/>
+            <circle class="t-part t-dot" cx="256" cy="390" r="24" fill="#00B4D8"/>
+        </svg>
+    </div>
+
+    <header>
+        <nav class="container-nav">
+            <div class="logo">
+                <img src="favicon.png" alt="Logo" style="height: 25px; vertical-align: middle; margin-right: 8px;">
+                Thomas Mansart Pauvif<span class="dot">.</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Retour à l'accueil</a></li>
+                <li><a href="index.html#competences" class="btn-nav">Mes autres compétences</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="min-height: 40vh; padding-top: 120px;">
+        <div class="hero-content">
+            <span class="subtitle fade-in-up">Parcours GEII - Tronc Commun</span>
+            <h1 class="fade-in-up delay-1">Hobbbies & passions</h1>
+            <p class="fade-in-up delay-2">Bienvenue dans mon univers</p>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container sae-container">
+    
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-gamepad" style="color: #0056D2;"></i> Stratégie & Jeux Vidéo</h2>
+                <p>Je suis un grand amateur de jeux de stratégie et de rôle qui demandent de la gestion complexe et de la réflexion tactique.</p>
+                <ul>
+                    <li><strong>Warcraft 3: Reforged :</strong> Optimisation des "build orders" et micro-gestion en temps réel (faction Orc).</li>
+                    <li><strong>Kenshi & Mount & Blade :</strong> Gestion de l'économie, recrutement de factions et survie dans des environnements bac-à-sable exigeants.</li>
+                </ul>
+                <div class="software-mini-gallery" style="margin-top: 15px;">
+                    <div class="gallery-placeholder" style="width: 200px; height: 120px; border-radius: 8px;">
+                        <i class="fas fa-image"></i><span>[Photo: Screenshot de ta base Kenshi ou Warcraft]</span>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="sae-divider">
+
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-desktop" style="color: #0056D2;"></i> Design Numérique & UI</h2>
+                <p>J'aime allier la technique à l'esthétique, que ce soit en créant des éléments graphiques ou en intégrant des interfaces web modernes.</p>
+                <ul>
+                    <li>Création d'assets graphiques et de logos.</li>
+                    <li>Conception d'interfaces web utilisant des effets modernes comme le <em>glassmorphism</em> et des animations CSS fluides.</li>
+                </ul>
+                <div class="software-mini-gallery" style="margin-top: 15px;">
+                    <div class="gallery-placeholder" style="width: 200px; height: 120px; border-radius: 8px;">
+                        <i class="fas fa-image"></i><span>[Photo: Exemple d'UI Glassmorphism ou logo]</span>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="sae-divider">
+
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-pen" style="color: #0056D2;"></i> Dessin Numérique</h2>
+                <p>Depuis tout petit, j'aime passer mon temps libre à dessiner. J'ai exploré plusieurs styles, notamment en expérimentant sur des logiciels comme Krita ou la suite Affinity, avant de trouver celui qui me plaît le plus. Encore aujourd'hui, mon trait est en constante évolution.</p>
+                
+                <h2 class="section-title-left" style="margin-top: 30px;"><i class="fas fa-folder-open"></i> Évolution de mes dessins</h2>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal('dessin 2 bis.png', 'Création originale - Travail ancien')">
+                        <img src="dessin 2 bis.png" alt="Dessin ancien">
+                        <div class="gallery-caption">
+                            <span>Création originale - Travail ancien</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('dessin 1.1.png', 'Création originale - Évolution du style')">
+                        <img src="dessin 1.1.png" alt="Dessin intermédiaire">
+                        <div class="gallery-caption">
+                            <span>Création originale - Évolution du style</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('dessin1.png', 'Création originale - Travail récent')">
+                        <img src="dessin1.png" alt="Dessin récent">
+                        <div class="gallery-caption">
+                            <span>Création originale - Travail récent</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+    <div id="imageModal" class="modal" onclick="closeModal()">
+    <   span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="modalCaption"></div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Thomas Mansart--Pauvif. Portfolio développé en HTML/CSS/JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

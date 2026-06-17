@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE - Carte Son & Lumière Rafale</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container-nav">
+            <div class="logo">Thomas Mansart Pauvif<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Retour à l'accueil</a></li>
+                <li><a href="index.html#projets" class="btn-nav">Mes autres SAE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero sae-hero" style="min-height: 40vh; padding-top: 120px;">
+        <div class="hero-content">
+            <span class="subtitle fade-in-up">Projet Électronique & utilisation du protocole NEC</span>
+            <h1 class="fade-in-up delay-1">Carte Récepteur et Emetteur d'une voiture télécomandée</h1>
+            <p class="fade-in-up delay-2">Conception d'une voiture télécomandée en infrarouge de A à Z.</p>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container sae-container">
+            
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-file-alt"></i> 1. Introduction & Cahier des charges</h2>
+                <p><strong>Contexte :</strong> Ce projet avait pour but de créer une voiture télécomandée.</p>
+                <p><strong>Cahier des charges :</strong></p>
+                <ul>
+                    <li>Respecter des contraintes de taille strictes pour l'intégration.</li>
+                    <li>Alimentation autonome.</li>
+                    <li>Pilotage des séquences lumineuses et sonores synchronisées.</li>
+                </ul>
+            </article>
+
+            <hr class="sae-divider">
+
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-sitemap"></i> 2. Conception Préliminaire</h2>
+                <p>Lors de cette phase, j'ai défini l'architecture globale du système. Le choix s'est porté sur un microcontrôleur spécifique pour la gestion des interruptions et de la mémoire audio.</p>
+                <p>Réalisation de diagrammes fonctionnels pour identifier les flux d'énergie et d'information (schéma bloc).</p>
+                </article>
+
+            <hr class="sae-divider">
+
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-microchip"></i> 3. Conception Détaillée</h2>
+                <p><strong>Électronique :</strong> Saisie du schéma électrique sous KiCad/Altium, dimensionnement des composants, et routage du PCB en respectant les règles de CEM (Compatibilité Électromagnétique).</p>
+                <p><strong>Programmation :</strong> Développement du code en C/C++, configuration des timers pour le signal PWM des LEDs et gestion du DAC pour la lecture du son.</p>
+            </article>
+
+            <hr class="sae-divider">
+
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-tools"></i> 4. Fabrication</h2>
+                <p>Une fois les cartes reçues, j'ai procédé à l'assemblage et à la soudure des composants CMS et traversants. L'intégration mécanique dans le boîtier a nécessité quelques ajustements pour garantir la robustesse de l'ensemble.</p>
+                </article>
+
+            <hr class="sae-divider">
+
+            <article class="sae-part reveal-bottom">
+                <h2 class="section-title-left"><i class="fas fa-check-circle"></i> 5. Vérification</h2>
+                <p>La dernière étape a consisté à valider le fonctionnement. Utilisation de l'oscilloscope pour vérifier la propreté des signaux PWM et du signal audio. Le système final répond parfaitement aux exigences initiales avec une autonomie mesurée de X heures.</p>
+            </article>
+<article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-thumbs-up"></i> 6. Ce qui m'a plu/déplu</h2>
+        <p>Jusqu’à présent, j’ai apprécié l’ensemble des étapes du projet. J’ai particulièrement aimé la phase de routage de la carte électronique, car c’était la partie la plus technique, et cela m’a permis d’apprendre réellement de nouvelles choses.</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-certificate"></i> 7. Compétences techniques et transversales acquises </h2>
+        <p>J’ai acquis des compétences techniques telles que la conception et la vérification. Ce sont des aspects que je n’avais pas encore approfondis auparavant, donc cette étape m’a permis de développer de nouvelles connaissances pratiques. Ce projet m’a également permis de développer plusieurs compétences transversales comme la communication, le travail en équipe, le respect des délais et la planification du travail.</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-exclamation-circle"></i> 8. Difficultés rencontrées</h2>
+        <p>Les premières difficultés sont apparues lors du routage de la carte électronique. J’ai eu du mal au début, mais en apprenant à mieux organiser l’espace disponible, j’ai réussi à surmonter ces obstacles.</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <!-- TA SECTION PHOTOTHÈQUE -->
+<article class="sae-part reveal-bottom">
+    <h2 class="section-title-left"><i class="fas fa-folder-open"></i> 9. Photothèque</h2>
+    
+    <div class="gallery-grid">
+        <!-- Photo 1 -->
+        <div class="gallery-item" onclick="openModal('KAH emtt.bmp', 'Schématique réalisée sur Proteus ISIS')">
+            <img src="schema.png" alt="Schématique">
+            <div class="gallery-caption">
+                <span>Schématique réalisée sur Proteus ISIS</span>
+            </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="gallery-item" onclick="openModal('routage_KAH_grand.png', 'Routage de la carte PCB avec contraintes d\'espace')">
+            <img src="routage_KAH_grand.png" alt="Routage ARES">
+            <div class="gallery-caption">
+                <span>Routage de la carte PCB avec contraintes d'espace</span>
+            </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="gallery-item" onclick="openModal('soudure.jpg', 'Soudure des composants traversants au laboratoire')">
+            <img src="soudure.jpg" alt="Soudure">
+            <div class="gallery-caption">
+                <span>Soudure des composants traversants au laboratoire</span>
+            </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="gallery-item" onclick="openModal('test.jpg', 'Test des LEDs de post-combustion sur le système embarqué')">
+            <img src="test.jpg" alt="Test fonctionnel">
+            <div class="gallery-caption">
+                <span>Test des LEDs de post-combustion sur le système embarqué</span>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-folder-open"></i> 10. Pour aller plus loin</h2>
+        <p>Voici les dossiers de conception, fabrication et vérification de ce projet.</p>
+        <div class="dossier-bouton">
+            <!--DDC-->
+            <a href="https://docs.google.com/document/d/1O9MRxUN9SmiS8zphWb2eJhG3his3Ts6h2bsenDu_99s/edit?usp=sharing" class="btn-dossier">DDC</a>
+            <!--DDF-->
+            <a href="https://docs.google.com/document/d/1TKkzRgDqNjS8CMB9XLzxyM9ivO9ssba8/edit?usp=sharing&ouid=106285308037596538125&rtpof=true&sd=true" class="btn-dossier">DDF</a>
+            <!--DDV-->
+            <a href="https://docs.google.com/document/d/1RHEOmkmFvlTCfgW4ug--Xu9LThV1eQy7LKolhG9B3o4/edit?usp=sharing" class="btn-dossier">DDV</a>
+        </div> 
+    </article>
+
+    <hr class="sae-divider">
+
+<!-- LA BOÎTE NOIRE QUI S'OUVRE AU CLIC (À placer juste avant le <footer>) -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="modalCaption"></div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Thomas Mansart--Pauvif. Portfolio développé en HTML/CSS/JS.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

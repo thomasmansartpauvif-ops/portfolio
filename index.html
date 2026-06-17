@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Thomas Mansart--Pauvif</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="preloader">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="loader-logo">
+            <defs>
+                <linearGradient id="techBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0A192F"/>
+                    <stop offset="50%" stop-color="#0056D2"/>
+                    <stop offset="100%" stop-color="#00B4D8"/>
+                </linearGradient>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0056D2" flood-opacity="0.2"/>
+                </filter>
+            </defs>
+            
+            <g filter="url(#shadow)">
+                <rect class="t-part t-horiz" x="126" y="140" width="260" height="64" rx="20" fill="url(#techBlue)"/>
+                
+                <rect class="t-part t-vert" x="224" y="180" width="64" height="160" rx="20" fill="url(#techBlue)"/>
+                
+                <circle class="t-part t-dot" cx="256" cy="390" r="24" fill="#00B4D8"/>
+            </g>
+        </svg>
+    </div>
+    <header>
+        <nav class="container-nav">
+            <div class="logo">Thomas Mansart Pauvif<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">Profil</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">SAE</a></li>
+                <li><a href="#projets-personnels">Projets Perso</a></li>
+                <li><a href="contact.html" class="btn-nav">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <span class="subtitle fade-in-up">Portfolio Étudiant</span>
+            <p> A cause d'un bug d'affichage il faut remonter en haut de la page quand vous cliquez sur une image pour l'ouvrir en grand. </p>
+            <h1 class="fade-in-up delay-1">Thomas<br>Mansart Pauvif</h1>
+            <p class="fade-in-up delay-2">Étudiant passionné par les systèmes embarqués, la domotique, la création et l'utilisation d'interfaces informatiques</p>
+            <div class="hero-buttons fade-in-up delay-3">
+                <a href="#projets" class="btn-primary">Découvrir mes SAE</a>
+                <a href="contact.html" class="btn-outline-white">Me contacter</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="a-propos" class="section">
+        <div class="container about-container">
+            <div class="about-image reveal-left">
+                <img src="photo CV.png" alt="Photo de profil">
+                <div class="experience-badge">
+                    <img src="logo_geii.png" alt="Logo GEII" class="badge-logo">
+                    
+                    <a href="https://www.iut.u-bordeaux.fr/geii/" target="_blank" class="badge-text" style="text-decoration: none; color: inherit; display: block;">
+                        <span>3+</span>
+                        <p>Années <br>d'études</p>
+                    </a>
+                </div>
+            </div>
+            <div class="about-text reveal-right">
+                <h2 class="section-title-left">À propos de moi</h2>
+                <p class="lead-text">Actuellement en BUT GEII à l'IUT de Bordeaux, je combine curiosité rigueur et ponctualité.</p>
+                <p>Au travers de mes Situations d'Apprentissage et d'Évaluation (SAE), j'ai appris à gérer un projet de A à Z : de la conception du cahier des charges à la réalisation du PCB, en passant par la programmation haut niveau (C++).</p>
+                <p>Mon objectif ? Concevoir des systèmes qui répondent à des problématiques concrètes, comme la sécurité domestique, l'aéronautique ou bien l'aérospatiale.</p>
+                <p>En tant qu'étudiant en première année j'ai suivi des cours d'électronique, d'énergie et d'automatisme, celà m'a permis d'apprendre les bases de chaque spécialités de deuxième année.</p>
+                <p>Personnellement, j'ai choisi de me tourner vers la filière électronique et systèmes embarqués car c'est la fillière parmi les trois qui me fascine le plus.</p>
+                
+                <a href="CV.pdf" download="CV_Thomas_Mansart--Pauvif" class="btn-download">
+                    <i class="fas fa-file-pdf"></i> Télécharger mon CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal-bottom">Mes Compétences</h2>
+            <div class="skills-grid">
+                
+                <!-- Rubrique 1 : Matières théoriques -->
+                <a href="mat_theo.html" class="skill-card clickable-card reveal-bottom delay-1">
+                    <div class="icon-box"><i class="fas fa-book-open"></i></div>
+                    <h3>Matières Théoriques</h3>
+                    <p>Électronique numérique et analogique, énergie et électrotechnique, automatisme, mathématiques, informatique industrielle.</p>
+                </a>
+
+                <!-- Rubrique 2 : Logiciels maîtrisés -->
+                 <a href="log_met.html" class="skill-card clickable-card reveal-bottom delay-1">
+                    <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Logiciels Maîtrisés</h3>
+                    <p>suite Proteus (ISIS/ARES), CATIA, TIA PORTAL, WinRELAIS, Excel, Word</p>
+                </a>
+
+                <!-- Rubrique 3 : Langues maîtrisées -->
+                <a href="lang_met.html" class="skill-card clickable-card reveal-bottom delay-1">
+                    <div class="icon-box"><i class="fas fa-language"></i></div>
+                    <h3>Langues Maîtrisées</h3>
+                    <p>Français (Langue maternelle), Anglais (Niveau technique et conversationnel) et Chinois(LV2 au lycée).</p>
+                </a>
+
+                <!-- Rubrique 4 : Compétences personnelles (Hobbies) -->
+                <a href="hobbies.html" class="skill-card clickable-card reveal-bottom delay-1">
+                    <div class="icon-box"><i class="fas fa-palette"></i></div>
+                    <h3>Hobbies & Passions</h3>
+                    <p>Dessin digital, jeux vidéos, dévellopement d'applications d'interfaces WEB.</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="section">
+        <div class="container">
+            <h2 class="section-title reveal-bottom">Mes Réalisations (SAE)</h2>
+            <div class="projects-grid">
+                
+                <a href="projet-rafale.html" class="project-card reveal-bottom">
+                    <div class="card-image-wrapper">
+                        <img src="rafale.png" alt="Illustration du projet Rafale" class="rafale-img"> 
+                        <div class="overlay">
+                            <span class="view-btn">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="tag-list">
+                            <span class="tag">Électronique</span>
+                            <span class="tag">Audio</span>
+                        </div>
+                        <h3>Carte Son & Lumière Rafale</h3>
+                        <p>Conception d'un système embarqué miniaturisé reproduisant les séquences de vol d'un Rafale (post-combustion, son réacteur).</p>
+                    </div>
+                </a>
+
+                <a href="projet-thermo.html" class="project-card reveal-bottom delay-2">
+                    <div class="card-image-wrapper">
+                        <img src="TDB.png" alt="Illustration du projet TDB" class="TDB-img"> 
+                        <div class="overlay">
+                            <span class="view-btn">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="tag-list">
+                            <span class="tag">IoT</span>
+                            <span class="tag">Capteurs</span>
+                        </div>
+                        <h3>Thermomètre Bain Bébé</h3>
+                        <p>Développement d'un objet connecté sécurisé (IP68) avec alertes visuelles intelligentes pour la sécurité infantile.</p>
+                    </div>
+                </a>
+
+                <a href="projet-KAH.html" class="project-card reveal-bottom delay-2">
+                    <div class="card-image-wrapper">
+                        <img src="KAH.png" alt="Illustration du projet KAH" class="KAH-img"> 
+                        <div class="overlay">
+                            <span class="view-btn">Voir le projet</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="tag-list">
+                            <span class="tag">IoT</span>
+                            <span class="tag">Capteurs</span>
+                        </div>
+                        <h3>Kart à hélice</h3>
+                        <p>Développement d'un Kart miniature et de son contrôleur, le kart peut être piloté a distance grâce à l'infrarouge</p>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="projets-personnels" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal-bottom">Projets Personnels</h2>
+            <p class="text-center subtitle-section reveal-bottom">Développements informatiques, solutions connectées et créations personnelles en dehors du cadre universitaire.</p>
+            
+            <div class="projects-grid">
+                
+                <a href="projet-perso.html" class="project-card reveal-bottom">
+                    <div class="card-image-wrapper">
+                        <div class="card-image">🛠️</div> 
+                        <div class="overlay">
+                            <span class="view-btn">Découvrir mes projets</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="tag-list">
+                            <span class="tag">application MediaDownloader</span>
+                            <span class="tag">Site internet Oracle (jeu de rôle avec maitre du jeu IA)</span>
+                            <span class="tag">station météo pour bébés</span>
+                        </div>
+                        <h3>Exploration & Créations</h3>
+                        <p>Découvrez l'ensemble de mes réalisations personnelles : de la station météo connectée aux scripts d'automatisation, en passant par le développement d'applications</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Thomas Mansart--Pauvif. Portfolio développé en HTML/CSS/JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

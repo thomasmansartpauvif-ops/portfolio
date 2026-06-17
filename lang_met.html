@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langues maîtrisées - Portfolio Thomas Mansart Pauvif</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="loader-logo">
+            <defs>
+                <linearGradient id="techBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0A192F"/>
+                    <stop offset="50%" stop-color="#0056D2"/>
+                    <stop offset="100%" stop-color="#00B4D8"/>
+                </linearGradient>
+            </defs>
+            <rect class="t-part t-horiz" x="126" y="140" width="260" height="64" rx="20" fill="url(#techBlue)"/>
+            <rect class="t-part t-vert" x="224" y="180" width="64" height="160" rx="20" fill="url(#techBlue)"/>
+            <circle class="t-part t-dot" cx="256" cy="390" r="24" fill="#00B4D8"/>
+        </svg>
+    </div>
+
+    <header>
+        <nav class="container-nav">
+            <div class="logo">
+                <img src="favicon.png" alt="Logo" style="height: 25px; vertical-align: middle; margin-right: 8px;">
+                Thomas Mansart Pauvif<span class="dot">.</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Retour à l'accueil</a></li>
+                <li><a href="index.html#competences" class="btn-nav">Mes autres compétences</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="min-height: 40vh; padding-top: 120px;">
+        <div class="hero-content">
+            <span class="subtitle fade-in-up">Compétences Linguistiques</span>
+            <h1 class="fade-in-up delay-1">Langues maîtrisées</h1>
+            <p class="fade-in-up delay-2">Un aperçu de mes capacités de communication à l'international, essentielles dans le domaine de l'ingénierie.</p>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container sae-container">
+    
+           <!-- CARTE LANGUE : FRANÇAIS -->
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-comment-dots"></i> Français</h3>
+                    <span class="software-percent" id="val-francais">100%</span>
+                </div>
+
+                <div class="slider-container">
+                    <!-- Valeur à 100 pour la langue maternelle -->
+                    <input type="range" min="0" max="100" value="100" class="software-slider" id="slider-francais" disabled>
+                    <p class="software-label" id="label-francais">Langue maternelle</p>
+                </div>
+
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Langue maternelle. Maîtrise parfaite à l'écrit comme à l'oral. Habitué à rédiger des documentations techniques complexes, des rapports de projet (SAE) et à communiquer de manière professionnelle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARTE LANGUE : ANGLAIS -->
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-globe-americas"></i> Anglais</h3>
+                    <span class="software-percent" id="val-anglais">75%</span>
+                </div>
+
+                <div class="slider-container">
+                    <!-- Valeur à 75 pour un niveau avancé/technique -->
+                    <input type="range" min="0" max="100" value="75" class="software-slider" id="slider-anglais" disabled>
+                    <p class="software-label" id="label-anglais">Niveau : Avancé</p>
+                </div>
+
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Niveau technique et conversationnel. Je suis parfaitement à l'aise avec la lecture de datasheets (fiches techniques de composants), la documentation de code et la recherche de solutions sur des forums anglophones. Capable de tenir une conversation fluide dans un cadre professionnel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARTE LANGUE : CHINOIS -->
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-language"></i> Chinois (Mandarin)</h3>
+                    <span class="software-percent" id="val-chinois">30%</span>
+                </div>
+
+                <div class="slider-container">
+                    <!-- Valeur à 30 pour des notions de base -->
+                    <input type="range" min="0" max="100" value="30" class="software-slider" id="slider-chinois" disabled>
+                    <p class="software-label" id="label-chinois">Niveau : Notions de base</p>
+                </div>
+
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Étudié en tant que Langue Vivante 2 (LV2) durant mes années de lycée. Je possède les bases de la prononciation (Pinyin), la compréhension de phrases simples et la reconnaissance de caractères fondamentaux.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Thomas Mansart--Pauvif. Portfolio développé en HTML/CSS/JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

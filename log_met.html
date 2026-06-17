@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logiciels maîtrisés - Portfolio Thomas Mansart Pauvif</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="loader-logo">
+            <defs>
+                <linearGradient id="techBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0A192F"/>
+                    <stop offset="50%" stop-color="#0056D2"/>
+                    <stop offset="100%" stop-color="#00B4D8"/>
+                </linearGradient>
+            </defs>
+            <rect class="t-part t-horiz" x="126" y="140" width="260" height="64" rx="20" fill="url(#techBlue)"/>
+            <rect class="t-part t-vert" x="224" y="180" width="64" height="160" rx="20" fill="url(#techBlue)"/>
+            <circle class="t-part t-dot" cx="256" cy="390" r="24" fill="#00B4D8"/>
+        </svg>
+    </div>
+
+    <header>
+        <nav class="container-nav">
+            <div class="logo">
+                <img src="favicon.png" alt="Logo" style="height: 25px; vertical-align: middle; margin-right: 8px;">
+                Thomas Mansart Pauvif<span class="dot">.</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Retour à l'accueil</a></li>
+                <li><a href="index.html#competences" class="btn-nav">Mes autres compétences</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="min-height: 40vh; padding-top: 120px;">
+        <div class="hero-content">
+            <span class="subtitle fade-in-up">Parcours GEII - Tronc Commun</span>
+            <h1 class="fade-in-up delay-1">Logiciels maîtrisés</h1>
+            <p class="fade-in-up delay-2">Voici l'entièreté des logiciels que je maîtrise ou que je suis en train d'apprendre.</p>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container sae-container">
+    
+           <!-- CARTE LOGICIEL : PROTEUS -->
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-microchip"></i> Suite Proteus (ISIS/ARES)</h3>
+                    <span class="software-percent" id="val-proteus">75%</span>
+                </div>
+
+                <!-- Le curseur FIXE -->
+                <div class="slider-container">
+                    <!-- L'attribut "disabled" bloque le curseur. Change le "value" pour modifier ton niveau ! -->
+                    <input type="range" min="0" max="100" value="75" class="software-slider" id="slider-proteus" disabled>
+                    <p class="software-label" id="label-proteus">Niveau : Avancé</p>
+                </div>
+
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>J'utilise la suite Proteus pour la conception de schémas électroniques (ISIS) et le routage de circuits imprimés (ARES). Cet outil m'a notamment permis de réaliser le PCB complexe de la carte Rafale avec des contraintes d'espace très strictes.</p>
+                    </div>
+                    <div class="software-mini-gallery">
+                        <img src="isis.jpg" alt="Schéma ISIS" onclick="openModal('isis.jpg', 'Conception sur Proteus ISIS')">
+                        <img src="ares.jpg" alt="Routage ARES" onclick="openModal('ares.jpg', 'Routage sur Proteus ARES')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARTE LOGICIEL : EXCEL -->
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-microchip"></i> Tableur(Excel/Google sheets)</h3>
+                    <span class="software-percent" id="val-excel">85%</span>
+                </div>
+
+                <!-- Le curseur FIXE -->
+                <div class="slider-container">
+                    <!-- L'attribut "disabled" bloque le curseur. Change le "value" pour modifier ton niveau ! -->
+                    <input type="range" min="0" max="100" value="85" class="software-slider" id="slider-excel" disabled>
+                    <p class="software-label" id="label-excel">Niveau : Avancé</p>
+                </div>
+
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>J'utilise excel principalement pour faire des représentations graphiques ou exprimer des statistiques en temps réel.</p>
+                    </div>
+                    <div class="software-mini-gallery">
+                        <img src="matrices.jpg" alt="matrice" onclick="openModal('matrices.jpg', 'création de matrices pour résoudre des équations à plusieures inconnues.')">
+                        <img src="bode.jpg" alt="bode" onclick="openModal('bode.jpg', 'représentation graphique de diagrammes de Bode.')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARTE LOGICIEL : CATIA -->
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-microchip"></i> CAO modélisation 3D (CATIA)</h3>
+                    <span class="software-percent" id="val-catia">45%</span>
+                </div>
+
+                <!-- Le curseur FIXE -->
+                <div class="slider-container">
+                    <!-- L'attribut "disabled" bloque le curseur. Change le "value" pour modifier ton niveau ! -->
+                    <input type="range" min="0" max="100" value="45" class="software-slider" id="slider-catia" disabled>
+                    <p class="software-label" id="label-catia">Niveau : Débutant</p>
+                </div>
+
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>J'ai découvert le logiciel CATIA grâce au DU TSS (technologie au service de la santé) car j'ai dû designer un boitier pour contenir des capteurs.</p>
+                    </div>
+                    <div class="software-mini-gallery">
+                        <img src="boitier.jpg" alt="boitier" onclick="openModal('boitier.jpg', 'création de boitier')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARTE LOGICIEL : suite office -->
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-microchip"></i> logiciels traitement de texte (word, google docs)</h3>
+                    <span class="software-percent" id="val-word">80%</span>
+                </div>
+
+                <!-- Le curseur FIXE -->
+                <div class="slider-container">
+                    <!-- L'attribut "disabled" bloque le curseur. Change le "value" pour modifier ton niveau ! -->
+                    <input type="range" min="0" max="100" value="80" class="software-slider" id="slider-word" disabled>
+                    <p class="software-label" id="label-word">Niveau : Avancé</p>
+                </div>
+
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Grâce aux nombreux dossier ou compte-rendus rédigés tout au long de mon parcours scolaire j'ai dévellopé des très bonnes base sur les logiciels de traitement de texte.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fab fa-python"></i> Développement Python & Serveur</h3>
+                    <span class="software-percent" id="val-python">80%</span>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="80" class="software-slider" id="slider-python" disabled>
+                    <p class="software-label" id="label-python">Niveau : Avancé</p>
+                </div>
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Maîtrise de Python pour le développement d'outils backend et de scripts d'automatisation. J'utilise couramment des librairies comme <strong>moviepy</strong> pour le traitement de médias, et <strong>PyInstaller</strong> pour compiler mes scripts en exécutables autonomes. Je suis également à l'aise avec la création de serveurs locaux via <strong>Flask</strong> pour gérer des API.</p>
+                    </div>
+                    <div class="software-mini-gallery">
+                        <div class="gallery-placeholder" style="width: 100%; height: 100px; border-radius: 8px;">
+                            <i class="fas fa-code"></i><span>[Photo: Extrait de code Python propre ou terminal Flask]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-microchip"></i> Programmation Embarquée (IDE Arduino / C++)</h3>
+                    <span class="software-percent" id="val-arduino">85%</span>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="85" class="software-slider" id="slider-arduino" disabled>
+                    <p class="software-label" id="label-arduino">Niveau : Avancé</p>
+                </div>
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Programmation bas niveau et haut niveau sur diverses architectures (ATmega328P, cartes Arduino MKR). Excellente compréhension de la communication I2C, SPI et UART, notamment pour l'intégration de capteurs environnementaux complexes (CO, CO2, NO2, VOC).</p>
+                    </div>
+                    <div class="software-mini-gallery">
+                        <div class="gallery-placeholder" style="width: 100%; height: 100px; border-radius: 8px;">
+                            <i class="fas fa-plug"></i><span>[Photo: Code C++ avec gestion d'I2C ou setup Arduino MKR]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fab fa-unity"></i> Unity 3D & C#</h3>
+                    <span class="software-percent" id="val-unity">65%</span>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="65" class="software-slider" id="slider-unity" disabled>
+                    <p class="software-label" id="label-unity">Niveau : Intermédiaire</p>
+                </div>
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Utilisation du moteur Unity pour des projets ludiques et expérimentaux. Je m'en sers notamment pour développer le front-end de jeux intégrant des systèmes externes complexes, comme la communication avec un serveur Flask hébergeant une API d'IA dynamique (Game Master).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="software-card reveal-bottom">
+                <div class="software-header">
+                    <h3><i class="fas fa-paint-brush"></i> Suite Créative (Krita, Affinity, Cavalry)</h3>
+                    <span class="software-percent" id="val-design">70%</span>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="70" class="software-slider" id="slider-design" disabled>
+                    <p class="software-label" id="label-design">Niveau : Avancé</p>
+                </div>
+                <div class="software-body">
+                    <div class="software-text">
+                        <p>Autonomie complète sur la création d'assets visuels. Je maîtrise Krita et la suite Affinity pour le dessin digital, la conception de logos et la retouche. J'utilise également Cavalry pour le motion design et l'animation vectorielle (création d'overlays de stream, éléments animés pour le web).</p>
+                    </div>
+                    <div class="software-mini-gallery">
+                        <div class="gallery-placeholder" style="width: 100%; height: 100px; border-radius: 8px;">
+                            <i class="fas fa-palette"></i><span>[Photo: Rendu sur Krita ou animation Cavalry]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Thomas Mansart--Pauvif. Portfolio développé en HTML/CSS/JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

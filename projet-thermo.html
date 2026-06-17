@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE - Carte Son & Lumière Rafale</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container-nav">
+            <div class="logo">Thomas Mansart Pauvif<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Retour à l'accueil</a></li>
+                <li><a href="index.html#projets" class="btn-nav">Mes autres SAE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero sae-hero" style="min-height: 40vh; padding-top: 120px;">
+        <div class="hero-content">
+            <span class="subtitle fade-in-up">utilisation de capteur & traitement de données</span>
+            <h1 class="fade-in-up delay-1">Thermomètre à indication lumineuse</h1>
+            <p class="fade-in-up delay-2">Conception d'un thermomètre donnant trois informations sur la température (trop chaud, trop froid, température idéale).</p>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container sae-container">
+    
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-file-alt"></i> 1. Introduction & Cahier des charges</h2>
+        <p><strong>Contexte :</strong> Conception d'un thermomètre connecté pour bain de bébé avec alerte visuelle par changement de couleur.</p>
+        <p><strong>Cahier des charges :</strong></p>
+        <ul>
+            <li>Mesure précise de la température de l'eau.</li>
+            <li>Alerte visuelle (RGB) en cas de dépassement de seuil critique.</li>
+            <li>Étanchéité totale du boîtier (IP68).</li>
+        </ul>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-sitemap"></i> 2. Conception Préliminaire</h2>
+        <p>Étude du capteur de température adapté au milieu liquide. Réalisation d'un diagramme pour définir les échanges entre le capteur et les LEDs d'alerte.</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-microchip"></i> 3. Conception Détaillée</h2>
+        <p><strong>Électronique :</strong> Routage PCB spécifique pour l'insertion dans un boîtier étanche. Gestion de l'isolation des composants électroniques.</p>
+        <p><strong>Traitement :</strong> Gestion des données recues grâce à deux AOP et une porte logique ET.</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-tools"></i> 4. Fabrication</h2>
+        <p>Perçage, soudage des composants traversants, test de continuité sur les pistes avant mise sous tension.</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-check-circle"></i> 5. Vérification</h2>
+        <p>Validation par comparaison avec un thermomètre étalon. Vérification de la fiabilité des LEDs d'alerte dans les conditions réelles d'utilisation.</p>
+    </article>
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-thumbs-up"></i> 6. Ce qui m'a plu/déplu</h2>
+        <p>Dans cette SAE 2, la partie recherche des solutions techniques était beacoup plus libre j'ai apprécié, ça nous à permis de vraiment faire une carte à notre manière. Mais d'autre part la rédaction du dossier de conception était beaucoup plus longue et fournie donc il y avait de nombreuses heures de cours passées à décrire tout ce qu'on faisait, c'est frustrant</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-certificate"></i> 7. Compétences techniques et transversales acquises </h2>
+        <p>J’ai acquis des compétences techniques telles que la conception et la vérification. Ce sont des aspects que je n’avais pas encore approfondis auparavant, donc cette étape m’a permis de développer de nouvelles connaissances pratiques. Ce projet m’a également permis de développer plusieurs compétences transversales comme la communication, le travail en équipe, le respect des délais et la planification du travail.</p>
+    </article>
+
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-exclamation-circle"></i> 8. Difficultés rencontrées</h2>
+        <p>Cette fois ci la difficulté à été de rédiger chaque paragraphes comme il faut et les rendre a l'heure. C'était stressant et on n'était jamais satisfait de notre travail.</p>
+    </article>
+    <hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-exclamation-circle"></i> 9. Apprentissage du travail en équipe</h2>
+        <p>Pour cette SAE les roles étaient prédéfinis : deux équpiers qui s'occupent de la partie traitement d'information et action et deux équipiers qui s'occupent de la partie énergie et acquisition. Cetterépartition des tâches permet une meilleure organisation au sein de l'équipe. Personnellement,je travaillais sur les parties traitement et action et c'est moi qui m'occupait des schémas, de certains calculs et de la rédaction de quelques paragraphes dans les dossiers.</p>
+    </article>
+    <hr class="sae-divider">
+
+    <!-- TA SECTION PHOTOTHÈQUE -->
+<article class="sae-part reveal-bottom">
+    <h2 class="section-title-left"><i class="fas fa-folder-open"></i> 10. Photothèque</h2>
+    
+    <div class="gallery-grid">
+        <!-- Photo 1 -->
+        <div class="gallery-item" onclick="openModal('KAH emtt.bmp', 'Schématique réalisée sur Proteus ISIS')">
+            <img src="schema.png" alt="Schématique">
+            <div class="gallery-caption">
+                <span>Schématique réalisée sur Proteus ISIS</span>
+            </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="gallery-item" onclick="openModal('test_thermo_grand.jpg', 'Routage de la carte PCB avec contraintes d\'espace')">
+            <img src="test_thermo.jpg" alt="Test température">
+            <div class="gallery-caption">
+                <span>Test du thermomètre dans une étuve</span>
+            </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="gallery-item" onclick="openModal('soudure.jpg', 'Soudure des composants traversants au laboratoire')">
+            <img src="soudure.jpg" alt="Soudure">
+            <div class="gallery-caption">
+                <span>Soudure des composants traversants au laboratoire</span>
+            </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="gallery-item" onclick="openModal('test.jpg', 'Test des LEDs de post-combustion sur le système embarqué')">
+            <img src="test.jpg" alt="Test fonctionnel">
+            <div class="gallery-caption">
+                <span>Test des LEDs de post-combustion sur le système embarqué</span>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr class="sae-divider">
+
+    <article class="sae-part reveal-bottom">
+        <h2 class="section-title-left"><i class="fas fa-folder-open"></i> 10. Pour aller plus loin</h2>
+        <p>Voici les dossiers de conception, fabrication et vérification de ce projet.</p>
+        <div class="dossier-bouton">
+            <!--DDC-->
+            <a href="https://docs.google.com/document/d/1BEz3qEnpPs5atIo95HUmTKXfgrFPHOxz/edit?usp=sharing&ouid=106285308037596538125&rtpof=true&sd=true" class="btn-dossier">DDC</a>
+            <!--DDF-->
+            <a href="https://docs.google.com/document/d/1nieH-OBGYxh53luYuO0zsrUZGyxlm2NW0VIgf1-G7tY/edit?usp=sharing" class="btn-dossier">DDF</a>
+            <!--DDV-->
+            <a href="https://docs.google.com/document/d/1GoB_56yhq9uzGWIknlyP6n0G_cfkXk-9Z9NceM1chho/edit?usp=sharing" class="btn-dossier">DDV</a>
+        </div> 
+    </article>
+
+    <hr class="sae-divider">
+
+<!-- LA BOÎTE NOIRE QUI S'OUVRE AU CLIC (À placer juste avant le <footer>) -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="modalCaption"></div>
+</div>
+
+    <footer>
+        <p>&copy; 2026 Thomas Mansart--Pauvif. Portfolio développé en HTML/CSS/JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

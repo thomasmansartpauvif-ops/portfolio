@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+        <nav class="container-nav">
+            <div class="logo">Thomas Mansart Pauvif<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Retour à l'accueil</a></li>
+                <li><a href="https://www.linkedin.com/in/thomas-mansart-pauvif-61b54b3ba/" class="btn-nav">Mon Linkedin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- L'identifiant id="contact" permet de cibler directement cette section depuis votre index.html avec l'ancre #contact -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="contact-title">Me contacter</h2>
+            <p class="contact-subtitle">Une question, une proposition de projet ou une opportunité professionnelle ? N'hésitez pas à m'envoyer un message.</p>
+            
+            <form action="https://formspree.io/f/xykakbja" method="POST" class="contact-form">
+    
+    <div class="form-group">
+        <label for="name" class="form-label">Votre nom complet :</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Ex: Jean Dupont" required>
+    </div>
+
+    <div class="form-group">
+        <label for="company" class="form-label">Votre entreprise / organisation (optionnel) :</label>
+        <input type="text" id="company" name="company" class="form-control" placeholder="Ex: Nom de l'entreprise">
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label">Votre adresse e-mail :</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="jean.dupont@email.com" required>
+    </div>
+
+    <div class="form-group">
+        <label for="subject" class="form-label">Sujet de votre message :</label>
+        <select id="subject" name="subject" class="form-control" required>
+            <option value="" disabled selected>Sélectionnez un motif...</option>
+            <option value="Proposition de stage / alternance">Proposition de stage / alternance</option>
+            <option value="Opportunité d'emploi">Opportunité d'emploi</option>
+            <option value="Question sur un projet (SAE, perso...)">Question sur un projet (SAE, perso...)</option>
+            <option value="Demande de devis / freelance">Demande de devis / freelance</option>
+            <option value="Autre">Autre</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message" class="form-label">Votre message :</label>
+        <textarea id="message" name="message" class="form-control" rows="6" placeholder="Détaillez votre proposition ou votre question ici..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Envoyer le message</button>
+
+</form>
+        </div>
+    </section>
+
+</body>
+</html>

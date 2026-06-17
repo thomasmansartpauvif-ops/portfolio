@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM.OS - Projets Personnels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Comic+Neue:wght@700&family=Cinzel:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================= VARIABLES & RESET ================= */
+        :root {
+            --neon-blue: #00f3ff;
+            --dark-blue: #020b14;
+            --panel-bg: rgba(2, 18, 36, 0.85);
+            --font-main: 'Share Tech Mono', monospace;
+            --border-style: 2px solid var(--neon-blue);
+            --text-color: var(--neon-blue);
+            --bg-color: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            height: 100vh;
+            overflow: hidden;
+            font-family: var(--font-main);
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        /* Scanlines globales */
+        .scanlines::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: repeating-linear-gradient(
+                0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* ================= ECRAN DE CHARGEMENT & CODE ================= */
+        #code-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden;
+            color: #00ff00;
+            font-family: monospace;
+            font-size: 14px;
+            opacity: 0.3;
+            z-index: 1;
+            background: #000;
+        }
+
+        .code-line {
+            white-space: nowrap;
+            animation: scrollUp linear infinite;
+        }
+
+        @keyframes scrollUp {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-100%); }
+        }
+
+        #loading-screen {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .os-window {
+            background: #c0c0c0;
+            border: 2px solid #fff;
+            border-right-color: #000;
+            border-bottom-color: #000;
+            width: 450px;
+            color: #000;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .os-header {
+            background: #000080;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .os-content {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 20px;
+            background: #fff;
+            border: 2px inset #808080;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #000080;
+            transition: width 0.1s linear;
+        }
+
+        /* ================= INTERFACE PRINCIPALE ================= */
+        #main-interface {
+            display: none;
+            height: 100vh;
+            padding: 2rem;
+            flex-direction: column;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-back {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            border: var(--border-style);
+            padding: 5px 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            background: var(--panel-bg);
+        }
+
+        .ui-container {
+            display: flex;
+            gap: 20px;
+            height: calc(100vh - 120px);
+        }
+
+        .side-menu {
+            width: 30%;
+            background: var(--panel-bg);
+            border: var(--border-style);
+            padding: 15px;
+            overflow-y: auto;
+            transition: all 0.5s;
+        }
+
+        .menu-title {
+            border-bottom: var(--border-style);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .project-btn {
+            display: block;
+            width: 100%;
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid transparent;
+            padding: 12px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .display-screen {
+            width: 70%;
+            background: var(--panel-bg);
+            border: var(--border-style);
+            padding: 30px;
+            position: relative;
+            transition: all 0.5s;
+            overflow-y: auto;
+        }
+
+        /* ================= THEMES DYNAMIQUES ================= */
+
+        /* Thème Base (Sci-Fi OS) */
+        body.theme-base {
+            background: radial-gradient(circle at center, var(--dark-blue) 0%, #000 100%);
+        }
+
+        body.theme-base .project-btn:hover, body.theme-base .project-btn.active {
+            border-color: var(--neon-blue);
+            background: rgba(0, 243, 255, 0.1);
+        }
+
+        /* Thème Garderie (Météo Bébé) */
+        body.theme-meteo {
+            --bg-color: #f0f8ff;
+            --text-color: #ff3366;
+            --panel-bg: #fffce6;
+            --border-style: 5px dashed #ffd700;
+            --font-main: 'Comic Neue', cursive;
+        }
+        body.theme-meteo .side-menu, body.theme-meteo .display-screen {
+            border-radius: 30px;
+            box-shadow: 10px 10px 0px #87ceeb;
+        }
+        body.theme-meteo .project-btn.active {
+            background: #ffcccb;
+            border-radius: 15px;
+        }
+
+        /* Thème D&D / Doom (Oracle) */
+        body.theme-oracle {
+            --bg-color: #0a0000;
+            --text-color: #ff0000;
+            --panel-bg: rgba(20, 0, 0, 0.9);
+            --border-style: 3px solid #8b0000;
+            --font-main: 'Cinzel', serif;
+        }
+        body.theme-oracle #main-interface {
+            background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+        }
+        body.theme-oracle .display-screen {
+            box-shadow: inset 0 0 50px #4a0000;
+        }
+        body.theme-oracle .project-btn.active {
+            background: #330000;
+            text-shadow: 0 0 5px #ff0000;
+            border-left: 5px solid #ff0000;
+        }
+
+        /* Thème Sober Dark (Media Downloader) */
+        body.theme-media {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --panel-bg: #1e1e1e;
+            --border-style: 1px solid #333;
+            --font-main: 'Roboto', sans-serif;
+        }
+        body.theme-media .nav-back { border-radius: 5px; }
+        body.theme-media .display-screen, body.theme-media .side-menu {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        body.theme-media .project-btn.active {
+            background: #2d2d2d;
+            border-left: 3px solid #007bff;
+        }
+
+        /* Thème Pub 90s (Devis) */
+        body.theme-devis {
+            --bg-color: #000080;
+            --text-color: #ffff00;
+            --panel-bg: #c0c0c0;
+            --border-style: 4px ridge #ffffff;
+            --font-main: 'Times New Roman', serif;
+        }
+        body.theme-devis #main-interface {
+            background: repeating-linear-gradient(45deg, #ff00ff 0, #ff00ff 10px, #00ffff 10px, #00ffff 20px);
+        }
+        body.theme-devis .side-menu, body.theme-devis .display-screen {
+            color: #000;
+        }
+        body.theme-devis .nav-back {
+            background: #ff0000; color: #fff; font-weight: bold; border: 3px outset #ffaaaa;
+        }
+        body.theme-devis .project-btn.active {
+            background: #000080; color: #fff; font-weight: bold; border: 2px inset #fff;
+        }
+        
+        /* Animation Marquee pour le thème 90s */
+        .marquee-90s {
+            background: red; color: yellow; font-weight: bold; padding: 5px; font-size: 1.5rem; white-space: nowrap; overflow: hidden;
+            border: 3px dashed yellow; margin-bottom: 15px;
+        }
+        .marquee-content {
+            display: inline-block; animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Typographie dynamique interne */
+        .project-details h2 { font-size: 2.2rem; margin-bottom: 15px; }
+        .tech-tags { margin: 15px 0; font-weight: bold; opacity: 0.8; }
+        .project-desc { font-size: 1.2rem; line-height: 1.6; }
+    </style>
+</head>
+<body class="theme-base scanlines">
+
+    <div id="code-bg"></div>
+
+    <div id="loading-screen">
+        <div class="os-window">
+            <div class="os-header">
+                <span>INSTALLATION_WORKSPACE.EXE</span>
+                <span>X</span>
+            </div>
+            <div class="os-content">
+                <p id="loading-text">Compilation des dépendances...</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="load-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-interface">
+        <a href="index.html" class="nav-back">Retour à l'accueil standard</a>
+
+        <div class="ui-container">
+            <div class="side-menu">
+                <h3 class="menu-title" id="menu-title-text">PROJETS_DISPONIBLES</h3>
+                <button class="project-btn" onclick="loadProject('meteo', this)">👶 Station Bébé</button>
+                <button class="project-btn" onclick="loadProject('oracle', this)">🐉 Oracle D&D</button>
+                <button class="project-btn" onclick="loadProject('media', this)">📥 Media Downloader</button>
+                <button class="project-btn" onclick="loadProject('devis', this)">💼 Générateur Devis</button>
+            </div>
+
+            <div class="display-screen" id="screen-display">
+                <h2 style="text-align: center; margin-top: 20%;">Veuillez sélectionner un projet...</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. GENERATEUR DE CODE EN ARRIERE PLAN ---
+        const codeContainer = document.getElementById('code-bg');
+        const codeSnippets = [
+            "import os", "def fetch_data(): return True", "console.log('INIT...');", 
+            "void setup() { Serial.begin(9600); }", "std::cout << 'Loading meshes' << std::endl;", 
+            "if(player.health < 0) { triggerDeath(); }", "document.getElementById('root')", 
+            "from tkinter import *", "while(True): listen_port(8080)", "import discord"
+        ];
+
+        function createCodeRain() {
+            for(let i = 0; i < 30; i++) {
+                let p = document.createElement('p');
+                p.className = 'code-line';
+                p.innerText = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.top = Math.random() * 100 + 'vh';
+                p.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                p.style.position = 'absolute';
+                codeContainer.appendChild(p);
+            }
+        }
+        createCodeRain();
+
+        // --- 2. LOGIQUE DE CHARGEMENT ---
+        window.onload = function() {
+            let bar = document.getElementById('load-bar');
+            let text = document.getElementById('loading-text');
+            let width = 0;
+            
+            let interval = setInterval(() => {
+                width += Math.floor(Math.random() * 20) + 5;
+                if (width >= 100) {
+                    width = 100;
+                    clearInterval(interval);
+                    text.innerText = "Accès autorisé.";
+                    
+                    setTimeout(() => {
+                        document.getElementById('loading-screen').style.opacity = '0';
+                        setTimeout(() => {
+                            document.getElementById('loading-screen').style.display = 'none';
+                            document.getElementById('code-bg').style.display = 'none'; // On cache le code
+                            document.getElementById('main-interface').style.display = 'flex';
+                        }, 500);
+                    }, 500);
+                }
+                bar.style.width = width + '%';
+            }, 300);
+        };
+
+        // --- 3. DONNEES ET CHANGEMENT DE THEME ---
+        const projectsData = {
+            meteo: {
+                theme: "theme-meteo",
+                title: "☁️ Station Météo & Qualité de l'Air Bébé",
+                tech: "Hardware : Arduino MKR, Écran OLED, Capteurs multi-gaz environnementaux | Protocole : I2C",
+                desc: "Conception complète d'un moniteur environnemental. Contrairement à une simple sonde de température, ce système communique via le bus I2C avec des capteurs multi-gaz complexes pour analyser en temps réel le taux de CO, CO2, NO2 et les COV (Composés Organiques Volatils). Les données critiques sont traitées par le microcontrôleur et affichées instantanément sur un écran OLED pour garantir un environnement sain et sécurisé."
+            },
+            oracle: {
+                theme: "theme-oracle",
+                title: "🔥 L'ORACLE DE LA CAMPAGNE",
+                tech: "Stack : Unity (Front-end), Serveur Flask (Python), API IA générative",
+                desc: "Projet extrêmement technique visant à créer un Maitre du Jeu autonome pour des campagnes de jeu de rôle. L'interface client est développée sous Unity et communique en temps réel avec un serveur backend sous Flask. Ce serveur traite les requêtes des joueurs, analyse l'état du jeu, et interroge une API d'Intelligence Artificielle pour générer des événements de jeu narratifs et dynamiques de manière impitoyable."
+            },
+            media: {
+                theme: "theme-media",
+                title: "Media Downloader v1.0",
+                tech: "Technologies : Python, PyInstaller, Moviepy",
+                desc: "Développement de A à Z d'un outil bureautique de traitement de flux. Le programme back-end est codé en Python, utilisant la librairie 'moviepy' pour manipuler, convertir et extraire efficacement des flux audio et vidéo locaux. Le script entier a ensuite été packagé via PyInstaller pour créer un exécutable (.exe) standalone et ergonomique, distribuable sans nécessiter l'installation d'un environnement Python."
+            },
+            devis: {
+                theme: "theme-devis",
+                title: "⭐⭐ GENERATEUR DE DEVIS 2000 ⭐⭐",
+                tech: "TECHNOLOGIES DU FUTUR : HTML5 - CSS3 - JavaScript",
+                desc: `<div class="marquee-90s"><span class="marquee-content">★★★ INCLUS : CATALOGUE COMPLET GAMME MITSUBISHI ! ★★★</span></div>
+                Création d'un outil web automatisé d'estimation tarifaire pour l'installation de systèmes thermiques et de climatisation. L'application génère des documents ultra-professionnels à la vitesse de la lumière !`
+            }
+        };
+
+        function loadProject(projectId, btnElement) {
+            // Nettoyage des boutons
+            let buttons = document.querySelectorAll('.project-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            // Application du thème sur le body
+            const data = projectsData[projectId];
+            document.body.className = data.theme + " scanlines";
+
+            // Injection du contenu
+            const screen = document.getElementById('screen-display');
+            screen.innerHTML = `
+                <div class="project-details">
+                    <h2>${data.title}</h2>
+                    <p class="tech-tags">${data.tech}</p>
+                    <hr style="margin: 15px 0; border:1px solid currentColor; opacity:0.3;">
+                    <p class="project-desc">${data.desc}</p>
+                </div>
+            `;
+
+            // Adaptation du titre du menu selon le thème
+            const menuTitle = document.getElementById('menu-title-text');
+            if(projectId === 'meteo') menuTitle.innerText = "Mes Jouets";
+            else if(projectId === 'oracle') menuTitle.innerText = "ARCHIVES INTERDITES";
+            else if(projectId === 'devis') menuTitle.innerText = "/// BUSINESS ///";
+            else menuTitle.innerText = "Explorateur de Fichiers";
+        }
+    </script>
+</body>
+</html>
